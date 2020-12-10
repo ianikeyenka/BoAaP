@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int m,n,i,j;
+    printf("Введите количество строк матрицы:\n");
+    scanf("%d",&n);
+    printf("Введите количесво столбцов матрицы:\n");
+    scanf("%d",&m);
+    float a[n][m];
+
+    printf("Ваша матрица будет заполнена случайными числами от -1 до 10\n");
+    int p,o;
+    p=10;
+    o=-1;
+
+    for(int i = 0;i < n;i++){
+        for(int j = 0;j < m;j++){
+            a[i][j]=o+rand()%(p - o +1);
+            printf("%6.1f",a[i][j]);
+        }
+        printf("\n");
+    }
+
+    int k;
+    printf("Адрес отрицаттельного числа:\n");
+    for(i=0;i<n;i++)
+        for(j=0;j<m;j++){
+            if(a[i][j]<0){
+                printf("[%d][%d]\n",i+1,j+1);
+                k=j;
+            }
+        }
+    for(int i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            if(k==j)
+            a[i][j]=a[i][j]/2;
+        }
+        
+    }
+    printf("Столбец содержащий одним отрицательным элементом будет уменьшен в 2 раза.\nПолученная матрица:\n");
+    for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            printf("%6.1f",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;   
+}
