@@ -1,7 +1,7 @@
 #include <stdio.h>
 void main(){
     int a,b,c,m, i;
-    printf("Введите m рублей\n");
+    printf("Введите m рублей(от 10 до 50 не включительно):\n");
     scanf("%d",&m);
     i =0;
 
