@@ -20,5 +20,5 @@ void main(void) {
     m = sqrt(s);
     l = asin(z);
     r = m * (pow(l, 2.0) - fabs(x - y));
-    printf("%f",r);
+    printf("%0.4f",r);
 }
